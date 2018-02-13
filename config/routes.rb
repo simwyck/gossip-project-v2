@@ -8,8 +8,12 @@ Rails.application.routes.draw do
 
   get 'static_pages/home'
 
+  get '/mygossips', to: 'gossips#mygossips'
+
   devise_for :admins
 
   resources :gossips
+
+  resources :users
 
 end

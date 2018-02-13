@@ -12,6 +12,8 @@ class GossipsController < ApplicationController
 
   def create
     @gossip = Gossip.create(gossip_params)
+    #@gossip.gossiper_id = current_admin.id
+    current_admin.gossips << @gossip
     @gossip.save
     redirect_to @gossip
   end
@@ -38,10 +40,13 @@ class GossipsController < ApplicationController
     flash[:success] = "Gossip successfully deleted!"
   end
 
+  def mygossips
+  end
+
   private
 
   def gossip_params
-    params.require(:gossip).permit(:anonymous_author, :content)
+    params.require(:gossip).permit(:anonymous_author, :content, :gossiper_id)
   end
 
 end

@@ -3,4 +3,8 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :created_gossips, foreign_key: "gossiper_id"
+  has_many :gossips
+
 end
