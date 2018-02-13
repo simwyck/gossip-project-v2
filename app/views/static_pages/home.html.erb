@@ -1,2 +1,7 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Gossips Homepage</h1>
+
+<% if admin_signed_in? %>
+  <p>Now you can <%= link_to "view all the gossips", gossips_path %>!</p>
+<% else %>
+  <p>Yo bro', you really need to login/register to this cooooool app!</p>
+<% end %>
