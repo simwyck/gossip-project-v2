@@ -10,10 +10,8 @@
 
 <p>Content:<br / /><%= @gossip.content %></p>
 
-<p><a href="<%= edit_gossip_path %>" class="btn btn-primary">Edit Gossip</a></p>
+<button><a href="<%= edit_gossip_path %>" class="btn btn-primary">Edit Gossip</a></button>
 
-<p><a href="<%= @gossip %>" class="btn btn-danger" data-confirm="Sure about this?" data-method="DELETE">Delete Gossip</a></p>
-
-<p class="btn btn-danger"><%= link_to 'Delete Gossip (Felix style)', @gossip, method: :delete %></p>
+<button><a href="<%= @gossip %>" class="btn btn-danger" data-confirm="Sure about this?" data-method="DELETE">Delete Gossip</a></button>
 
 <p><a href="<%= gossips_path %>" class="btn btn-default">Back To More Gossips</a></p>

@@ -12,7 +12,6 @@ class GossipsController < ApplicationController
 
   def create
     @gossip = Gossip.create(gossip_params)
-    #@gossip.gossiper_id = current_admin.id
     current_admin.gossips << @gossip
     @gossip.save
     redirect_to @gossip
